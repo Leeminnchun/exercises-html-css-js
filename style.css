@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --navbar-color: #222222;
+    --body-color: #F9F9F9;
+    --click-color:#7C7BAD;
+    --text-color-navbar:#9d9d9d;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+   
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.3;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* style navbar */
+.navbar{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--navbar-color);
+}
+.navbar .navbar__left ul,
+.navbar .navbar__right ul{
+    display: flex;
+}
+.navbar .navbar__left ul li{
+    margin-left: 10px;
+    padding: 4px;
+}
+.navbar .navbar__right ul li{
+    margin-right: 10px;
+    padding: 4px;
+}
+.navbar .navbar__left>ul>li>a,
+.navbar .navbar__right>ul>li>a
+{
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--text-color-navbar);
+
+}
+.navbar .navbar__left>ul>li>a:hover,
+.navbar .navbar__right>ul>li>a:hover{
+    color: white;
+}
+.active__navbar{
+    background-color: black;
+}
+/*  style main */
+
+.main__wrap{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 26px;
+}
+/* main-left */
+.main__wrap .main__left{
+    position: fixed;
+    width: 15%;
+    padding-top: 30px;
+    height: 100vh;
+    border-right: 1px solid gainsboro;
+}
+.main__wrap .main__left div{
+    padding-left: 15px;
+    margin-top: 5px;
+}
+.main__left__active{
+    background-color: var(--click-color);
+    color: white;
+}
+.main__child{
+    color: var(--click-color);
+}
+.main__wrap .main__left div:nth-of-type(2),
+.main__wrap .main__left div:nth-of-type(6),
+.main__wrap .main__left div:nth-of-type(7)
+{
+    padding-left: 10px;
+}
+
+
+/* main-right */
+.main__wrap .main__right{
+    position: absolute;
+    right: 0;
+    width: 85%;
+}
+.main__wrap .main__right .control__panel{
+    position: fixed;
+    width: 100%;
+    background-color: var(--body-color);
+    border-bottom: 1px solid gainsboro;
+}
+
+/* control - above */
+.panel__above{
+    display: flex;
+    justify-content: space-between;  
+}
+.panel__above__1,
+.panel__above__2
+{
+    width: 50%;
+}
+.panel__above__1{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.panel__above__1 input:focus
+{
+    outline: 0;
+}
+.panel__above__2 input:focus{
+    outline: 0;
+}
+.panel__above__2 button{
+    padding: 2px;
+}
+.panel__above__2 input{
+    width: 50%;
+    height: 25px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* filter */
+.filterSort{
+    width: 80px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.filterSort button
+{
+    padding: 5px;
+    border: none;
+}
+.filterSort button:hover
+{
+    background-color: var(--text-color-navbar);
+}
+
+/* control-under */
+.panel__under{
+    display: flex;
+}
+.pannel__under__1{
+    width: 50%;
+    height: 30px;
+    padding-left: 10px;
+}
+.pannel__under__1 button{
+    background-color: var(--click-color);
+    border: none;
+    padding: 5px;
+    color: white;
+}
+.pannel__under__1 input:focus{
+    outline: 0;
+}
+
+.pannel__under__2{
+    position: relative;
+    width: 50%;
+    height: 30px;
+}
+.wrap__pannel__under__2{
+    position: absolute;
+    display: flex;
+    right: 34%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.wrap__pannel__under__2 div{
+    margin-right: 10px;
+    right: 10px;
+}
+.nextPage,
+.pervPage,
+.closedSorst,
+.showSearch,
+#searchPerson,
+#sortAToZ,
+#sortZToA,
+#addMember
+{
+    cursor: pointer;
+}
+
+/* person-item */
+
+.content__person{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+    align-items: center;
+    background-color: var(--body-color);
+    justify-content: space-between;
+}
+
+.card__person{
+    display: flex;
+    margin:15px 0 0 10px;
+    padding: 10px;
+    width: 32%;
+    background-color: white;
+    border: 1px solid gainsboro;
+}
+.person__img{
+    width: 50px;
+    display: flex;
+    height: 50px;
+    background-color: var(--click-color);
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.person__img span{
+    font-size: 20px;
+}
+.person__info__content{
+    padding: 10px 10px 10px 20px;
+}
+.person__info  button{
+    margin-left: 200px;
+    background-color: var(--click-color);
+    border: none;
+    padding: 3px;
+    color: white;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 40%;
+  }
+  .modal-content input{
+    margin: 10px;
+    padding: 5px;
+  }
+  .modal-content button{
+    width: 130px;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: var(--click-color);
+    border: none;
+    color: white;
+  }
+  .modal-content button:hover{
+    background-color:#bebdee;
+  }
+  /* The Close Button */
+  .closeModal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeModal:hover,
+  .closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #myBtn{
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background-color: var(--click-color);
+    border: none;
+  }
+  #myBtn:hover{
+    background-color: #bebdee;
+  }

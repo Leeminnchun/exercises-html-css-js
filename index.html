@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- head -->
+    <div class="navbar">
+        <div class="navbar__left">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Tax Finalization</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Working Timesheet</a></li>
+                <li><a href="#">Appraisals</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">TimeSheet</a></li>
+                <li class="active__navbar"><a href="#" style="color: white;">Employees</a></li>
+                <li><a href="#">Assets</a></li>
+                <li><a href="#">Helpdesk</a></li>
+                <li><a href="#">Personal Info</a></li>
+                <li><a href="#">More <i class="fa-solid fa-caret-down"></i></a></li>
+            </ul>
+        </div>
+        <div class="navbar__right">
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-clock"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-comments"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user-tie"></i></a></li>
+                <li><a href="#">Lê Minh Chung</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main__wrap">
+        <div class="main__left">
+            <div class="img">
+                <img src="./img/company_logo.png" alt="">
+            </div>
+            <div class="main__child">Employees</div>
+            <div class="main__left__active">Employees</div>
+            <div>Adjust Employees</div>
+            <div>Members Biryhday</div>
+            <div class="main__child">Departments</div>
+            <div class="main__child">Termination Request</div>
+        </div>
+
+
+        <div class="main__right">
+            <!-- quan ly nhan vien  -->
+            <div class="control__panel">
+                <div class="panel__above">
+                    <div class="panel__above__1">
+                        <button id="myBtn">Open Modal</button>
+                        <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content"> 
+                                <span class="closeModal">&times;</span>
+                                <span>THÊM NHÂN VIÊN:</span>
+                                <input id="nameMember" type="text" placeholder="Ten nhan vien">
+                                <input type="text" name="" id="idMember" placeholder="Trị Số" disabled>
+                                <input id="emailMember" type="text" placeholder="Email" disabled>
+                                <input id="jobMember" type="text" placeholder="Vi tri cong viec">
+                                <button id="addMember">Them nhan vien</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel__above__2">
+                        <button class="showSearch"><i class="fa-solid fa-filter"></i> Approved</button>
+                        <div class="filterSort">
+                            <button id="sortAToZ">Sort: A-Z</button>
+                            <button id="sortZToA">Sort: Z-A</button>
+                        </div>
+                        <button class="closedSorst"><i class="fa-solid fa-x"></i></button>
+                        <input id="getSearch" type="text" placeholder="Search..."><button id="searchPerson"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <!-- modal -->
+                <!-- <div id="myModal" class="modal"> -->
+
+                <!-- Modal content -->
+
+
+                <div class="panel__under">
+                    <div class="pannel__under__1">
+                        <!-- <input id="jobMember" type="text" placeholder="Vi tri cong viec">
+                        <button id="addMember">Them nhan vien</button> -->
+                        <span>Total Item: </span><span id="totalItem"></span>
+                    </div>
+                    <div class="pannel__under__2">
+                        <div class="wrap__pannel__under__2">
+                            <div>
+                                <span>PerPage: </span>
+                                <select name="" id="record">
+                                    <option value="40">40</option>
+                                    <option value="20">20</option>
+                                    <option value="10">10</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span class="startPage">1</span>
+                                <span class="cheracterPage">/</span>
+                                <span class="totalPage">Total</span>
+                            </div>
+                            <div class="button__control">
+                                <button class="pervPage disabled"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="nextPage"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="button__show">
+                                <button><i class="fa-solid fa-table-cells-large"></i></button>
+                                <button><i class="fa-solid fa-bars"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content__person" id="person">
+                <!-- <div class="card__person">
+                    <div class="person__img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="person__info">
+                        <p>Name</p>
+                        <p>work</p>
+                        <p>email</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="module" src="./demo.js"></script>
+</body>
+
+</html>
